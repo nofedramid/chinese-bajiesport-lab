@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>简明指南 · 八戒体育</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: #f5f9fc;
+      color: #1f2b38;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* 顶部导航 */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0 14px;
+      border-bottom: 1px solid #d6e4ed;
+      flex-wrap: wrap;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(145deg, #1c8b82, #47b5aa);
+      border-radius: 10px 4px 10px 4px;
+    }
+
+    .logo-text {
+      font-weight: 600;
+      font-size: 1.3rem;
+      letter-spacing: 0.5px;
+      color: #13635c;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #2f4b5c;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #1c8b82;
+    }
+
+    /* hero 简明指南 */
+    .hero-guide {
+      margin: 48px 0 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .hero-guide h1 {
+      font-size: 2.15rem;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      line-height: 1.2;
+      color: #0d2d33;
+    }
+
+    .hero-guide .accent {
+      color: #1c8b82;
+    }
+
+    .hero-desc {
+      font-size: 1.08rem;
+      max-width: 680px;
+      color: #2f4b5c;
+      margin-top: 8px;
+    }
+
+    .hero-desc a {
+      color: #1c8b82;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 500;
+    }
+
+    .hero-desc a:hover {
+      color: #0f6b63;
+    }
+
+    /* 网格卡片模块 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      margin: 48px 0 40px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 28px 24px 32px;
+      box-shadow: 0 6px 18px rgba(28, 139, 130, 0.06), 0 1px 4px rgba(0, 20, 30, 0.04);
+      transition: transform 0.15s ease, box-shadow 0.2s;
+      border: 1px solid #e7f0f5;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(28, 139, 130, 0.10);
+    }
+
+    .card-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: #e3f2ee;
+      border-radius: 16px;
+      margin-bottom: 18px;
+      color: #1c8b82;
+      font-size: 1.6rem;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #0d2d33;
+    }
+
+    .card p {
+      color: #2f4b5c;
+      font-size: 0.97rem;
+    }
+
+    .card .tag {
+      display: inline-block;
+      margin-top: 14px;
+      background: #e7f6f2;
+      padding: 4px 14px;
+      border-radius: 30px;
+      font-size: 0.78rem;
+      color: #13635c;
+      letter-spacing: 0.3px;
+    }
+
+    /* 常见说明区域 (FAQ 摘要) */
+    .faq-section {
+      background: #e5f1f0;
+      border-radius: 36px;
+      padding: 32px 32px 28px;
+      margin: 36px 0 48px;
+    }
+
+    .faq-section h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #0d2d33;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .faq-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      color: #1f4a4d;
+      font-size: 1rem;
+    }
+
+    .faq-a {
+      color: #2f4b5c;
+      font-size: 0.92rem;
+      padding-left: 6px;
+      border-left: 3px solid #47b5aa;
+      padding-left: 14px;
+    }
+
+    .faq-a a {
+      color: #1c8b82;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* 访问提醒 */
+    .visit-note {
+      background: #ffffffd0;
+      backdrop-filter: blur(2px);
+      border-radius: 40px;
+      padding: 24px 28px;
+      margin: 0 0 36px;
+      border: 1px solid #d3e5e9;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px 20px;
+    }
+
+    .visit-note span:first-child {
+      font-weight: 600;
+      color: #0d2d33;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .visit-note .reminder {
+      color: #2f4b5c;
+      flex: 1;
+      min-width: 180px;
+      font-size: 0.95rem;
+    }
+
+    .visit-note .reminder a {
+      color: #1c8b82;
+      font-weight: 500;
+      text-decoration: underline;
+    }
+
+    .badge-tip {
+      background: #1c8b82;
+      color: white;
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+    }
+
+    /* 页脚 */
+    .footer-note {
+      text-align: center;
+      padding: 20px 0 36px;
+      font-size: 0.85rem;
+      color: #5b7480;
+      border-top: 1px solid #d6e4ed;
+      margin-top: 16px;
+    }
+
+    .footer-note a {
+      color: #1c8b82;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* 响应式调校 */
+    @media (max-width: 720px) {
+      .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 16px 24px;
+      }
+
+      .hero-guide h1 {
+        font-size: 1.8rem;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-section {
+        padding: 24px 20px 20px;
+        border-radius: 28px;
+      }
+
+      .visit-note {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .hero-guide h1 {
+        font-size: 1.5rem;
+      }
+      .card {
+        padding: 24px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- 顶部导航 -->
+    <header class="top-bar">
+      <div class="logo-area">
+        <div class="logo-icon"></div>
+        <span class="logo-text">八戒体育</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#guide">简明指南</a>
+        <a href="#scenes">场景</a>
+        <a href="#faq">常见说明</a>
+      </nav>
+    </header>
+
+    <!-- hero + 介绍 -->
+    <section class="hero-guide" id="guide">
+      <h1>简明指南 · <span class="accent">八戒体育</span></h1>
+      <div class="hero-desc">
+        让每一次浏览都更清晰。<a href="https://chinese-bajiesport.com">八戒体育</a> 提供体育信息与互动内容，本页从实用角度梳理访问方式、使用场景以及常见提醒，帮助你快速了解服务脉络。
+      </div>
+    </section>
+
+    <!-- 三个场景模块 -->
+    <div class="card-grid" id="scenes">
+      <div class="card">
+        <div class="card-icon">🏃</div>
+        <h3>日常浏览</h3>
+        <p>无论是快速查看赛事情报、活动预告，还是浏览体育资讯，都可以通过 <strong>八戒体育</strong> 获取简明内容。移动端适配良好，随时打开随时阅读。</p>
+        <span class="tag">轻量体验</span>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">📱</div>
+        <h3>多端场景</h3>
+        <p>手机、平板或电脑，页面布局自动适配。你可以根据习惯自由切换设备，无需额外配置。将 <strong>八戒体育</strong> 添加至桌面，访问更顺手。</p>
+        <span class="tag">响应界面</span>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🔍</div>
+        <h3>查阅与探索</h3>
+        <p>适合在空闲时浏览感兴趣的内容板块。信息结构自然，方便你按需查找。对初次访问的用户，建议先从首页功能区域开始探索。</p>
+        <span class="tag">自然导航</span>
+      </div>
+    </div>
+
+    <!-- 常见说明 (FAQ 摘要) -->
+    <section class="faq-section" id="faq">
+      <h2>📌 常见说明</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <span class="faq-q">▸ 一定要注册才能浏览吗？</span>
+          <span class="faq-a">部分内容可直接浏览，不需要注册。具体互动功能以页面提示为准。通过 <a href="https://chinese-bajiesport.com">八戒体育</a> 可查看当前开放范围。</span>
+        </div>
+        <div class="faq-item">
+          <span class="faq-q">▸ 移动端访问需要注意什么？</span>
+          <span class="faq-a">建议使用系统自带浏览器或 Chrome / Safari，保持网络通畅。页面针对小屏幕做了间距和按钮优化，横向滚动极少发生。</span>
+        </div>
+        <div class="faq-item">
+          <span class="faq-q">▸ 内容更新频率如何？</span>
+          <span class="faq-a">体育资讯和活动相关板块会保持常规更新。你可以不定期回来看看，或把 <strong>八戒体育</strong> 加入书签。</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 访问提醒 -->
+    <div class="visit-note">
+      <span>🧭 访问提醒</span>
+      <div class="reminder">
+        浏览时请留意页面提示，通过 <a href="https://chinese-bajiesport.com">八戒体育</a> 获得最新信息。建议在可靠网络环境下使用，并留意浏览器地址栏是否正确。
+      </div>
+      <span class="badge-tip">保持顺畅</span>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer-note">
+      <p>简明指南 · 内容定期梳理 &nbsp;|&nbsp; <a href="https://chinese-bajiesport.com">八戒体育</a></p>
+    </footer>
+  </div>
+</body>
+</html>
